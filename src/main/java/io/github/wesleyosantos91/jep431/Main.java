@@ -1,4 +1,4 @@
-package io.github.wesleyosantos91.sequenced;
+package io.github.wesleyosantos91.jep431;
 
 import java.util.*;
 

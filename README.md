@@ -8,7 +8,7 @@
 ### Exemplo
 
 ```java
-package io.github.wesleyosantos91.stringtemplate;
+package io.github.wesleyosantos91.jep430;
 
 public class Main {
 
@@ -45,7 +45,6 @@ public class Main {
 ````
 
 ## JEP 431: Sequenced Collections
-
 > Essa atualização tem inclusão de interfaces adicionais que tem objetivo representar collections que mantêm uma ordem 
 > de encontro específica. Cada uma dessas coleções oferece acesso claro ao seu primeiro e último elemento, bem como a 
 > capacidade de processar seus elementos na ordem inversa, enriquecendo a flexibilidade e utilidade das 
@@ -54,7 +53,7 @@ public class Main {
 ### Exemplo
 
 ```java
-package io.github.wesleyosantos91.sequenced;
+package io.github.wesleyosantos91.jep431;
 
 import java.util.*;
 
@@ -71,7 +70,7 @@ public class Main {
         System.out.println(fruits.getFirst());
 
         // old get the last element
-        System.out.println(fruits.get(fruits.size()-1));
+        System.out.println(fruits.get(fruits.size() - 1));
         // new feature java 21 get the last element
         System.out.println(fruits.getLast());
 
@@ -98,6 +97,7 @@ public class Main {
 }
 
 ````
+
 ## JEP JEP 439: ZGC Geracional
 > O ZGC Geracional herda as capacidades do Z Garbage Collector (ZGC), introduzindo gerações separadas para objetos 
 > novos e antigos, permitindo ao ZGC coletar objetos novos mais frequentemente, o que é especialmente benéfico, 
@@ -114,6 +114,51 @@ public class Main {
 javac Main.java
 java -XX:+UseZGC -XX:+ZGenerational Main
 ````
+
+## JEP 440: Record Patterns
+> Aprimorar a linguagem de programação Java com Record Patterns para descontruir valores de registro é uma proposta 
+> empolgante. Essa adição possibilitaria uma forma mais poderosa, declarativa e componível de navegar e processar dados. 
+> Inspirada em conceitos de outras linguagens de programação, essa melhoria tornaria o código Java mais elegante e 
+> eficiente, permitindo aos desenvolvedores aproveitar a facilidade de uso e a legibilidade dos Record Patterns e de 
+> tipo aninhados. Essa evolução na linguagem Java abriria novas possibilidades para a manipulação de dados e 
+> contribuiria para uma programação mais expressiva e concisa.
+### [Documentação Oficial](https://openjdk.org/jeps/440)
+### Exemplo
+```java
+
+```
+
+## JEP 441: Pattern Matching for switch
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/441)
+### Exemplo
+```java
+    // TODO
+```
+
+## JEP 442: Foreign Function & Memory API (Third Preview)
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/442)
+### Exemplo
+```java
+    // TODO
+```
+
+## JEP 443: Unnamed Patterns and Variables (Preview)
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/443)
+### Exemplo
+```java
+    // TODO
+```
+
+## JEP 444: Virtual Threads
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/444)
+### Exemplo
+```java
+    // TODO
+```
 
 ## JEP 445: Unnamed Classes and Instance Main Methods (Preview)
 > Essa atualização visa simplificar a programação em Java para estudantes, permitindo que eles comecem a escrever 
@@ -132,3 +177,50 @@ javac -- release 21 --enable-preview Main.java
 java --eneble-preview Main
 ````
 
+## JEP 446: Scoped Values (Preview)
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/446)
+### Exemplo
+```java
+    // TODO
+```
+
+## JEP 448: Vector API (Sixth Incubator)
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/448)
+### Exemplo
+```java
+    // TODO
+```
+
+## JEP 449: Deprecate the Windows 32-bit x86 Port for Removal
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/449)
+### Exemplo
+```java
+    // TODO
+```
+
+## JEP 451: Prepare to Disallow the Dynamic Loading of Agents
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/451)
+### Exemplo
+```java
+    // TODO
+```
+
+## JEP 452: Key Encapsulation Mechanism API
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/452)
+### Exemplo
+```java
+    // TODO
+```
+
+## JEP 453: Structured Concurrency (Preview)
+> // TODO
+### [Documentação Oficial](https://openjdk.org/jeps/453)
+### Exemplo
+```java
+    // TODO
+```

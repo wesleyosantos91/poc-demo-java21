@@ -1,4 +1,4 @@
-package io.github.wesleyosantos91.stringtemplate;
+package io.github.wesleyosantos91.jep430;
 
 public class Main {
 
