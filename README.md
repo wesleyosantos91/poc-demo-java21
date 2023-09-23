@@ -1,6 +1,9 @@
 # Novas Fetures Java 21
 ## JEP 430: String Templates (Preview)
-> Os novos 'templates' de strings aprimoram a linguagem de programação Java, permitindo a criação de strings formatadas de maneira mais flexível e eficiente. Com essa funcionalidade, é possível combinar texto literal com expressões embutidas e processadores de templates para produzir resultados especializados, tornando o desenvolvimento em Java ainda mais poderoso e intuitivo.
+> Os novos 'templates' de strings aprimoram a linguagem de programação Java, permitindo a criação de strings formatadas 
+> de maneira mais flexível e eficiente. Com essa funcionalidade, é possível combinar texto literal com expressões 
+> embutidas e processadores de templates para produzir resultados especializados, tornando o desenvolvimento em Java 
+> ainda mais poderoso e intuitivo.
 ### [Documentação Oficial](https://openjdk.org/jeps/430)
 ### Exemplo
 
@@ -43,7 +46,10 @@ public class Main {
 
 ## JEP 431: Sequenced Collections
 
-> Essa atualização tem inclusão de interfaces adicionais que tem objetivo representar collections que mantêm uma ordem de encontro específica. Cada uma dessas coleções oferece acesso claro ao seu primeiro e último elemento, bem como a capacidade de processar seus elementos na ordem inversa, enriquecendo a flexibilidade e utilidade das estruturas de dados em Java.
+> Essa atualização tem inclusão de interfaces adicionais que tem objetivo representar collections que mantêm uma ordem 
+> de encontro específica. Cada uma dessas coleções oferece acesso claro ao seu primeiro e último elemento, bem como a 
+> capacidade de processar seus elementos na ordem inversa, enriquecendo a flexibilidade e utilidade das 
+> estruturas de dados em Java.
 ### [Documentação Oficial](https://openjdk.org/jeps/431)
 ### Exemplo
 
@@ -92,9 +98,26 @@ public class Main {
 }
 
 ````
+## JEP JEP 439: ZGC Geracional
+> O ZGC Geracional herda as capacidades do Z Garbage Collector (ZGC), introduzindo gerações separadas para objetos 
+> novos e antigos, permitindo ao ZGC coletar objetos novos mais frequentemente, o que é especialmente benéfico, 
+> pois eles têm ciclos de vida mais curtos. Para habilitar o ZGC Geracional, você pode adicionar a 
+> opção ```-XX:+ZGenerational``` ao usar o ZGC no comando, como em ```java -XX:+UseZGC -XX:+ZGenerational```. 
+> Essa mudança promete menor latência, redução na sobrecarga de memória e uso de CPU reduzido, sem afetar 
+> significativamente o throughput em comparação com o non-generational ZGC. Esta é uma ótima notícia para o ecossistema 
+> Java, e o ZGC Geracional está no caminho certo para se tornar a escolha padrão em futuras versões, oferecendo 
+> benefícios substanciais para aplicativos Java em todo o mundo.
+### [Documentação Oficial](https://openjdk.org/jeps/439)
+### Exemplo
+
+```shell
+javac Main.java
+java -XX:+UseZGC -XX:+ZGenerational Main
+````
 
 ## JEP 445: Unnamed Classes and Instance Main Methods (Preview)
-> Essa atualização visa simplificar a programação em Java para estudantes, permitindo que eles comecem a escrever programas sem a necessidade de dominar recursos complexos da linguagem.
+> Essa atualização visa simplificar a programação em Java para estudantes, permitindo que eles comecem a escrever 
+> programas sem a necessidade de dominar recursos complexos da linguagem.
 ### [Documentação Oficial](https://openjdk.org/jeps/445)
 ### Exemplo
 
@@ -103,3 +126,9 @@ void main(String[] args) {
     System.out.println("Olá mundo!");
 }
 ````
+
+```shell
+javac -- release 21 --enable-preview Main.java
+java --eneble-preview Main
+````
+
