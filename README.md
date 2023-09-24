@@ -206,19 +206,39 @@ public class Main {
 ```
 
 ## JEP 442: Foreign Function & Memory API (Third Preview)
-> // TODO
+> Este é um recurso de preview de uma API que permita que programas Java interoperem com código e dados fora do ambiente 
+> de execução do Java é um avanço notável. Ao possibilitar a invocação eficiente de funções externas (ou seja, código 
+> que não está dentro da Máquina Virtual Java) e o acesso seguro à memória externa (ou seja, memória não gerenciada pela JVM), 
+> essa API capacita programas Java a utilizar bibliotecas nativas e processar dados nativos sem os problemas de 
+> fragilidade e os perigos associados à Interface de Programação Nativa (JNI).
 ### [Documentação Oficial](https://openjdk.org/jeps/442)
-### Exemplo
-```java
-    // TODO
-```
 
 ## JEP 443: Unnamed Patterns and Variables (Preview)
-> // TODO
+> Aprimorar a linguagem Java com padrões sem nome, que correspondem a um componente de registro sem declarar o nome ou 
+> o tipo do componente, e variáveis sem nome, que podem ser inicializadas, mas não utilizadas, é uma adição inovadora 
+> à linguagem. Ambos são representados pelo caractere sublinhado, _. Esse recurso, que está em fase de prévia, oferece 
+> a flexibilidade de utilizar variáveis sem nome em situações em que é necessário declará-las, mas seu valor não é 
+> utilizado, tornando o código mais conciso e expressivo.
 ### [Documentação Oficial](https://openjdk.org/jeps/443)
 ### Exemplo
 ```java
-    // TODO
+package io.github.wesleyosantos91.jep443;
+
+record Person(String name, String lastName) { }
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Person person = new Person("Wesley", "Oliveira Santos");
+
+        // As of Java 21 Unnamed Patterns and Variables
+        // Unnamed variables are useful in scenarios where a variable must be declared, but its value is not used.
+        if (person instanceof Person(String name, _)) {
+            System.out.println(STR."Hello my name is \{name}");
+        }
+    }
+}
 ```
 
 ## JEP 444: Virtual Threads
