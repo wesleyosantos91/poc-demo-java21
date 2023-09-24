@@ -158,7 +158,7 @@ public class Main {
 > de maneira mais eficaz e expressiva.
 > 
 > Obs: Essa funcionalidade foi lançada inicialmente como preview no java 17 (JEP 406: Pattern Matching for switch (Preview)
-> e poteriomente pelas: 
+> e posteriomente pelas: 
 > - JEP 427: Pattern Matching for switch (Third Preview)
 > - JEP 432: Record Patterns (Second Preview)
 > - JEP 441: Pattern Matching for switch (final version) 
