@@ -6,14 +6,14 @@ public class Main {
         var name = "wesley";
         String[] lastName = {"Oliveira", "Santos"};
 
-        // old
+        // Prior to Java 21
         String exemple1 = "Hello my full name is " + name + " " + lastName[0] + " " + lastName[1];
         System.out.println(exemple1);
-        // new feature java 21
+        // As of Java 21
         String stringTemplateExemple1 = STR."Hello my full name is \{name} \{lastName[0]} \{lastName[1]}";
         System.out.println(stringTemplateExemple1);
 
-        //old
+        // Prior to Java 21
         String exemple2 =
                 STR."""
                     SELECT *
@@ -21,7 +21,7 @@ public class Main {
                 WHERE p.name = \'%s\'
                     """.formatted(name);
         System.out.println(exemple2);
-        // new feature java 21
+        // As of Java 21
         String stringTemplateExemple2 =
                 STR."""
                     SELECT *

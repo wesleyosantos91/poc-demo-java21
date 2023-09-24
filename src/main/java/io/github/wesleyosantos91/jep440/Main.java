@@ -8,12 +8,12 @@ public class Main {
 
         Person person = new Person("Wesley", "Oliveira Santos");
 
-        // old pattern matching for Record
+        // Prior to Java 21 pattern matching for Record
         if (person instanceof Person p) {
             System.out.println(STR."Hello my full name is \{p.name()} \{p.lastName()}");
         }
 
-        // new feature java 21 Record Patterns (destructuring)
+        // As of Java 21 Record Patterns (destructuring)
         if (person instanceof Person(String name, String lastName)) {
             System.out.println(STR."Hello my full name is \{name} \{lastName}");
         }

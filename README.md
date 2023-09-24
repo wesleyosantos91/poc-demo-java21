@@ -125,15 +125,84 @@ java -XX:+UseZGC -XX:+ZGenerational Main
 ### [Documentação Oficial](https://openjdk.org/jeps/440)
 ### Exemplo
 ```java
+package io.github.wesleyosantos91.jep440;
+
+record Person(String name, String lastName) { }
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Person person = new Person("Wesley", "Oliveira Santos");
+
+        // old pattern matching for Record
+        if (person instanceof Person p) {
+            System.out.println(STR."Hello my full name is \{p.name()} \{p.lastName()}");
+        }
+
+        // new feature java 21 Record Patterns (destructuring)
+        if (person instanceof Person(String name, String lastName)) {
+            System.out.println(STR."Hello my full name is \{name} \{lastName}");
+        }
+    }
+}
 
 ```
 
 ## JEP 441: Pattern Matching for switch
-> // TODO
+> A adição da pattern matching para expressões e instruções do tipo switch no Java representa uma 
+> funcionalidade que permite que você teste uma expressão em relação a vários padrões, cada um com ações específicas 
+> associadas. Isso torna mais fácil e conciso lidar com situações complexas relacionadas a dados. Essa melhoria permite 
+> que os desenvolvedores expressem consultas e manipulações de dados de forma mais direta e segura, simplificando o 
+> código e melhorando a legibilidade. Em resumo, essa feature amplia a capacidade do Java de processar e manipular dados
+> de maneira mais eficaz e expressiva.
+> 
+> Obs: Essa funcionalidade foi lançada inicialmente como preview no java 17 (JEP 406: Pattern Matching for switch (Preview)
+> e poteriomente pelas: 
+> - JEP 427: Pattern Matching for switch (Third Preview)
+> - JEP 432: Record Patterns (Second Preview)
+> - JEP 441: Pattern Matching for switch (final version) 
+
 ### [Documentação Oficial](https://openjdk.org/jeps/441)
 ### Exemplo
 ```java
-    // TODO
+package io.github.wesleyosantos91.jep441;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Integer number = 21;
+        System.out.println(formatter(number));
+        System.out.println(formatterPatternSwitch(number));
+    }
+
+    // Prior to Java 21
+    static String formatter(Object obj) {
+        String formatted = "unknown";
+        if (obj instanceof Integer i) {
+            formatted = String.format("int %d", i);
+        } else if (obj instanceof Long l) {
+            formatted = String.format("long %d", l);
+        } else if (obj instanceof Double d) {
+            formatted = String.format("double %f", d);
+        } else if (obj instanceof String s) {
+            formatted = String.format("String %s", s);
+        }
+        return formatted;
+    }
+
+    // As of Java 21
+    static String formatterPatternSwitch(Object obj) {
+        return switch (obj) {
+            case Integer i -> String.format("int %d", i);
+            case Long l    -> String.format("long %d", l);
+            case Double d  -> String.format("double %f", d);
+            case String s  -> String.format("String %s", s);
+            default        -> obj.toString();
+        };
+    }
+}
+
 ```
 
 ## JEP 442: Foreign Function & Memory API (Third Preview)
